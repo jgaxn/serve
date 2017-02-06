@@ -1,9 +1,10 @@
 Devise.setup do |config|
+  require 'devise/orm/active_record'
   # Other configuration...
 
   # ==> OmniAuth
   # Add a OmniAuth providers.
-  User.omniauth_providers.each do |provider_name|
+  [:facebook, :developer].each do |provider_name|
     if provider_name == :developer
       config.omniauth :developer
     else
